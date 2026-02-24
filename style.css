@@ -1,0 +1,178 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'StratosSkyeng', sans-serif;
+    background-color: #0F0804;
+}
+
+.header {
+    height: 100vh;
+    background-image: url(images/13.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header__overlay {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.50) 80.49%, #0F0804 100%);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.header__title {
+    margin: auto;
+    font-size: 96px;
+    text-align: center;
+    color: white;
+    max-width: 658px;
+    font-weight: 400;
+}
+
+.header__link {
+    height: 90px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.17);
+    backdrop-filter: blur(11.5px);
+}
+
+.header__link:hover {
+    opacity: .8;
+}
+
+.header__anchor {
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery {
+    /* Выключает точки у списка */
+    list-style-type: none;
+    margin: 173px auto;
+    max-width: 1232px;
+    padding: 0 16px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.gallery__item {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.gallery__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery__item:hover .gallery__overlay {
+    opacity: 1;
+}
+
+.gallery__description {
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    padding: 20px;
+    max-width: 80%;
+    line-height: 1.4;
+}
+
+.gallery__actions {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    display: flex;
+    gap: 12px;
+}
+
+.gallery__button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.gallery__button:hover {
+    opacity: 0.7;
+}
+
+.gallery__button_like {
+    background-image: url('./images/like.svg');
+}
+
+.gallery__button_like.active {
+    background-image: url('./images/like_active4.svg');
+}
+
+.gallery__button_favorite {
+    background-image: url('./images/favorites.svg');
+}
+
+.gallery__button_favorite.active {
+    background-image: url('./images/favorites_active.svg');
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Только для 768px - 2 колонки */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.footer {
+    height: 100vh;
+    background-image: url(./images/7.png);
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.footer__overlay {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(180deg, #0F0804 0%, rgba(0, 0, 0, 0.6) 100%);
+}
+
+.footer__text {
+    margin: auto;
+    font-size: 40px;
+    color: white;
+}
